@@ -78,7 +78,7 @@ xor      & XOR                     & R   & 0110011    & 0x4    & 0x00   & rd = r
 or       & OR                      & R   & 0110011    & 0x6    & 0x00   & rd = rs1 | rs2               & \\
 and      & AND                     & R   & 0110011    & 0x7    & 0x00   & rd = rs1 \& rs2              & \\
 sll      & Shift Left Logical      & R   & 0110011    & 0x1    & 0x00   & rd = rs1 \verb|<<| rs2       & \\
-srl      & Shift Right Logical     & R   & 0110011    & 0x5    & 0x00   & rd = rs1 \verb|>>| rs2       & \\
+srl      & Shift Right Logical     & R   & 0110011    & 0x5    & 0x00   & rd = rs1 \verb|>>| rs2       & zero extends \\
 sra      & Shift Right Arith       & R   & 0110011    & 0x5    & 0x20   & rd = rs1 \verb|>>| rs2       & msb-extends \\
 slt      & Set Less Than           & R   & 0110011    & 0x2    & 0x00   & rd = (rs1 < rs2) ? 1 : 0     & \\
 sltu     & Set Less Than (U)       & R   & 0110011    & 0x3    & 0x00   & rd = (rs1 < rs2) ? 1 : 0     & \\ \hline
@@ -87,7 +87,7 @@ xori     & XOR Immediate           & I   & 0010011    & 0x4    &        & rd = r
 ori      & OR Immediate            & I   & 0010011    & 0x6    &        & rd = rs1 | imm               & \\
 andi     & AND Immediate           & I   & 0010011    & 0x7    &        & rd = rs1 \& imm              & \\
 slli     & Shift Left Logical Imm  & I   & 0010011    & 0x1    & imm[5:11]=0x00 & rd = rs1 \verb|<<| imm[0:4]  & \\
-srli     & Shift Right Logical Imm & I   & 0010011    & 0x5    & imm[5:11]=0x00 & rd = rs1 \verb|>>| imm[0:4]  & \\
+srli     & Shift Right Logical Imm & I   & 0010011    & 0x5    & imm[5:11]=0x00 & rd = rs1 \verb|>>| imm[0:4]  & zero-extends\\
 srai     & Shift Right Arith Imm   & I   & 0010011    & 0x5    & imm[5:11]=0x20 & rd = rs1 \verb|>>| imm[0:4]  & msb-extends \\
 slti     & Set Less Than Imm       & I   & 0010011    & 0x2    &        & rd = (rs1 < imm) ? 1 : 0     & \\
 sltiu    & Set Less Than Imm (U)   & I   & 0010011    & 0x3    &        & rd = (rs1 < imm) ? 1 : 0     & unsigned cmp \\ \hline
